@@ -1,8 +1,26 @@
-
+mod calculate_age;
 fn main(){
     println!("{}",is_even(2));
     println!("{}",fib(4));
-    println!("the length of the string is {}", len_of_the_string(String::from("HappyCoding")));
+    let x = String::from("HappyCoding");
+    println!("the length of the string is {}", len_of_the_string(&x));
+
+    struct User{
+        name:String,
+        age:u8,
+    }
+
+    let user = User{
+        name: String::from("John"),
+        age: 25,
+    };
+    println!{"the name of the user {}",user.age};
+    //using the calculate_age module
+    let age = calculate_age::Age{
+        year_of_birth:2002,
+        current_year:2025,
+    };
+    println!("the age of the user is {}",age.calculate_age());
 }
 
 /// Returns true if num is even, and false if num is odd.
@@ -14,8 +32,8 @@ fn is_even(num :i32)->bool{
     
 }
 
-/// Returns the num-th number in the Fibonacci sequence.
-/// The Fibonacci sequence is 0,1,1,2,3,5,8,13,21,34,55,89,144, etc.
+// Returns the num-th number in the Fibonacci sequence.
+// The Fibonacci sequence is 0,1,1,2,3,5,8,13,21,34,55,89,144, etc.
 fn fib(num: u32)->u32{
     if num ==0 || num==0{
         return num;
@@ -31,6 +49,7 @@ fn fib(num: u32)->u32{
         
 }
 
-fn len_of_the_string(str: String)->usize{
+// Returns the number of characters in a given string.
+fn len_of_the_string(str: &str)->usize{
     str.chars().count()
 }
