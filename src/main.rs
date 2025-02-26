@@ -1,10 +1,14 @@
-mod calculate_age;
+use std::string;
+
+mod struct_learn;
+mod enums_learn;
 fn main(){
     println!("{}",is_even(2));
     println!("{}",fib(4));
     let x = String::from("HappyCoding");
     println!("the length of the string is {}", len_of_the_string(&x));
 
+    //Struct 
     struct User{
         name:String,
         age:u8,
@@ -16,11 +20,24 @@ fn main(){
     };
     println!{"the name of the user {}",user.age};
     //using the calculate_age module
-    let age = calculate_age::Age{
+    let age = struct_learn::Age{
         year_of_birth:2002,
         current_year:2025,
     };
     println!("the age of the user is {}",age.calculate_age());
+    println!("the next year is {}",age.next_year(1));
+    struct_learn::Age::static_method();
+
+    //Enums
+
+    enums_learn::current_direction(enums_learn::Direction::North);
+    println!("the area of the Rectangle is {}", enums_learn::area_calculate(enums_learn::Shape::Rectangle(10.0,20.0)));
+    let string = String::from("HappyCoding");
+    match enums_learn::find_index_of_the_a_in_the_string(&string)
+    {
+        Some(index) =>println!("the index of the a in the string is {}",index + 1),
+        None => println!("There is no a in the string"),
+    }
 }
 
 /// Returns true if num is even, and false if num is odd.
