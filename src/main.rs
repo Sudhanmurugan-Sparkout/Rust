@@ -1,5 +1,4 @@
-use std::string;
-
+use chrono::{Utc,Local};
 mod struct_learn;
 mod enums_learn;
 fn main(){
@@ -38,6 +37,19 @@ fn main(){
         Some(index) =>println!("the index of the a in the string is {}",index + 1),
         None => println!("There is no a in the string"),
     }
+
+    //Error Handling in Rust
+    let result = enums_learn::read_file();
+    match result{
+        Ok(value) =>println!("{}",value),
+        Err(error) =>println!("{}",error),
+    }
+
+    //package managent 
+    let utc_time = Utc::now();
+    println!("The current time is {}",utc_time);
+    let local_time = Local::now();
+    println!("The current time is {}",local_time);
 }
 
 /// Returns true if num is even, and false if num is odd.

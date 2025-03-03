@@ -1,3 +1,4 @@
+ use std::fs;
  pub enum Direction{
     North,
     East,
@@ -38,4 +39,16 @@ pub fn find_index_of_the_a_in_the_string(str: &str) -> Option<i32> {
        }
    }
    return None;
+}
+
+        
+   // Reads the contents of a file named "src/file.txt" and returns them as a string.
+   // If the file cannot be read, returns an error message.
+pub fn read_file()->Result<String,String>{
+   let result = fs::read_to_string("src/file.txt");
+   match result {
+      Ok(value) =>Ok(value),
+      Err(_) =>Err(String::from("There was an error reading the file")),
+   }
+
 }
