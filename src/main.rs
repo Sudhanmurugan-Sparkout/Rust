@@ -1,6 +1,7 @@
 use chrono::{Utc,Local};
 mod struct_learn;
 mod enums_learn;
+mod memory_management;
 fn main(){
     println!("{}",is_even(2));
     println!("{}",fib(4));
@@ -50,6 +51,10 @@ fn main(){
     println!("The current time is {}",utc_time);
     let local_time = Local::now();
     println!("The current time is {}",local_time);
+
+    //memeoy managemnet
+
+    memory_management::ownership(); 
 }
 
 /// Returns true if num is even, and false if num is odd.
