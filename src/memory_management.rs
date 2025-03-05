@@ -23,3 +23,18 @@ pub fn moving(){
 pub fn dublicate(a:String){
     println!("{}",a);
 }
+
+pub fn borrowing(){
+    let a:String = String::from("sudhan");
+    let b:&String = &a;
+    println!("{},{}",a,b) //In this case we acces both variable because we only get refernce of the variable not owner 
+                         // the owner of the string is a, bUt B owns the value(refernce) of a
+}
+
+pub fn muttable_reference(){
+    let mut a:String =String::from("sudhan");
+    let  b = &mut a;
+    b.push_str("madhan");
+    println!("{}",b);
+    println!("{}",a);
+}

@@ -2,6 +2,7 @@ use chrono::{Utc,Local};
 mod struct_learn;
 mod enums_learn;
 mod memory_management;
+mod learn_vectors;
 fn main(){
     println!("{}",is_even(2));
     println!("{}",fib(4));
@@ -54,7 +55,12 @@ fn main(){
 
     //memeoy managemnet
 
-    memory_management::ownership(); 
+    memory_management::ownership();
+    memory_management::borrowing();
+    memory_management::muttable_reference(); 
+
+    //Vectors
+    learn_vectors::vectors();
 }
 
 /// Returns true if num is even, and false if num is odd.
