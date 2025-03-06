@@ -3,6 +3,7 @@ mod struct_learn;
 mod enums_learn;
 mod memory_management;
 mod learn_vectors;
+mod learn_hashmap;
 fn main(){
     println!("{}",is_even(2));
     println!("{}",fib(4));
@@ -61,6 +62,9 @@ fn main(){
 
     //Vectors
     learn_vectors::vectors();
+
+    //hashmap
+    learn_hashmap::hashmap();
 }
 
 /// Returns true if num is even, and false if num is odd.
